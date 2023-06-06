@@ -1,6 +1,81 @@
+@keyframes play {
+    100% {
+        background-position: -1135px;
+    }
+}
+@keyframes step {
+    from {left: 0;}
+    to {left: calc(50% - 45px);}
+}
 body {
     margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./assets/background.jpg);
+    background-position: center;
+    background-size: cover;
     font-family: sans-serif;
+}
+.title {
+    margin-bottom: 0;
+    padding-left: 20%;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 68px;
+    letter-spacing: 0.1em;
+    color: rgb(11, 107, 11);
+}
+
+/*.btn {
+    width: 50px;
+    height: 50px;
+    background: green;
+}*/
+.sprite-container {
+    height: 100%;
+    align-items: center;
+    display: none;
+    transition: all 2s easy;
+}
+.sprite-container.active {
+    display: flex;
+}
+.sprite-image {
+    height: 123px;
+    width: 70px;
+    background: url(./assets/smur-sprite.png) 0px 0px;
+    animation: play 0.8s steps(16) infinite,
+    step 4s linear;
+    position: absolute;
+    left: 0;
+}
+.game-container {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    transition: all 1s easy 0s;
+}
+.game-container.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+}
+.game-wrapper {
+    width: 320px;
+    height: 320px;
+    /*margin-bottom: 80px;*/
+    background-color: #d21855;
+    opacity: 0;
+    transition: all 1s ease 0s;
+    transform: scale(0);
+}
+.game-container.active .game-wrapper {
+    transform: scale(1);
+    opacity: 1;
 }
 
 #game {
@@ -25,12 +100,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
-.title {
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 48px;
-    letter-spacing: 0.1em;
-    color: #d21855;
 }
 
 .game-score {

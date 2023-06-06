@@ -1,4 +1,19 @@
-let scoreBlock;
+const body = document.querySelector('.body');
+const sprite = document.querySelector('.sprite-container');
+const game = document.querySelector('.game-container');
+const btn = document.querySelector('.btn');
+
+body.addEventListener("animationend", (step) => {
+	sprite.classList.remove('active');
+	game.classList.add('active');
+})
+
+/*function openK() {
+	game.classList.add("active");
+  };
+  
+	btn.addEventListener("click", openK);*/
+/*let scoreBlock;
 let score = 0;
 
 const config = {
@@ -26,4 +41,4 @@ let berry = {
 let canvas = document.querySelector("#game-canvas");
 let context = canvas.getContext("2d");
 scoreBlock = document.querySelector(".game-score .score-count");
-//drawScore();
+//drawScore();*/
