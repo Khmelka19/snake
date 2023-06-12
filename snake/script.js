@@ -1,12 +1,17 @@
 const body = document.querySelector('.body');
 const sprite = document.querySelector('.sprite-container');
-const game = document.querySelector('.game-container');
+const game = document.querySelector('.game');
 const btn = document.querySelector('.btn');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext("2d");
 
+/*Анимация в начале игры*/
 body.addEventListener("animationend", (step) => {
 	sprite.classList.remove('active');
 	game.classList.add('active');
-})
+});
+
+/*Отрисовка поля*/
 
 /*function openK() {
 	game.classList.add("active");
